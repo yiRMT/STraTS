@@ -6,9 +6,9 @@ If you find this repo useful, please cite
 
 
     @article{10.1145/3516367,
-author = {Tipirneni, Sindhu and Reddy, Chandan K.},
-title = {Self-Supervised Transformer for Sparse and Irregularly Sampled Multivariate Clinical Time-Series},
-year = {2022},
+    author = {Tipirneni, Sindhu and Reddy, Chandan K.},
+    title = {Self-Supervised Transformer for Sparse and Irregularly Sampled Multivariate Clinical Time-Series},
+    year = {2022},
 issue_date = {December 2022},
 publisher = {Association for Computing Machinery},
 address = {New York, NY, USA},
