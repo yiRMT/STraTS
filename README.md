@@ -4,8 +4,8 @@ This is the official keras implementation of STraTS (https://arxiv.org/abs/2107.
 
 If you find this repo useful, please cite
 
-\fbox{
-@article{10.1145/3516367,
+
+    @article{10.1145/3516367,
 author = {Tipirneni, Sindhu and Reddy, Chandan K.},
 title = {Self-Supervised Transformer for Sparse and Irregularly Sampled Multivariate Clinical Time-Series},
 year = {2022},
@@ -23,5 +23,4 @@ month = {jul},
 articleno = {105},
 numpages = {17},
 keywords = {Time-series, healthcare, neural networks, deep learning, Transformer, self-supervised learning}
-}
 }
