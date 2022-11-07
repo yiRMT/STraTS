@@ -875,3 +875,13 @@ events['TABLE'] = events['TABLE'].apply(f)
 
 # Save data.
 pickle.dump([events, oc, train_ind, valid_ind, test_ind], open('mimic_iii_preprocessed.pkl','wb'))
+
+# Normalize data and save. 
+ts, oc, train_ind, valid_ind, test_ind = pickle.load(open('mimic_iii_preprocessed.pkl','rb'))
+means_stds = ts.groupby('variable').agg({'value':['mean', 'std']})
+means_stds.columns = [col[1] for col in means_stds.columns]
+means_stds.loc[means_stds['std']==0, 'std'] = 1
+ts = ts.merge(means_stds.reset_index(), on='variable', how='left')
+ii = ~ts.variable.isin(['Age', 'Gender'])
+ts.loc[ii, 'value'] = (ts.loc[ii, 'value']-ts.loc[ii, 'mean'])/ts.loc[ii, 'std']
+pickle.dump([ts, oc, train_ind, valid_ind, test_ind], open('mimic_iii_preprocessed.pkl','wb'))
